@@ -8,13 +8,7 @@ import Loading from "../Loading/Loading";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "../ImageModal/ImageModal";
 import toast, { Toaster } from "react-hot-toast";
-
-interface Image {
-  id: string;
-  urls: { small: string; regular: string };
-  alt_description: string;
-  likes: number;
-}
+import { Image } from "./App.types";
 
 const App: React.FC = () => {
   const [images, setImages] = useState<Image[]>([]);
@@ -45,7 +39,7 @@ const App: React.FC = () => {
 
         const response = await axios.get(url);
 
-        if (response.data.results.length === 0 && page === 1) {
+        if (response.data?.results.length === 0 && page === 1) {
           toast("No images matching your search query. Please try again!");
         } else {
           setImages((prevImages) => [
@@ -84,7 +78,7 @@ const App: React.FC = () => {
       {images.length > 0 && (
         <ImageGallery images={images} openModal={openModal} />
       )}
-      {images.length > 0 && !loading && (
+      {images.length > 0 && !loading && totalResults > 0 && (
         <LoadMoreBtn onLoadMore={handleLoadMore} />
       )}
       <Toaster />
