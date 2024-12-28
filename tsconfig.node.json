@@ -3,7 +3,10 @@
     "composite": true,
     "module": "ESNext",
     "moduleResolution": "node16",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "rollup/parseAst": ["node_modules/rollup/dist/parseAst.d.ts"]
+    }
   },
   "include": ["vite.config.ts"]
 }
