@@ -47,8 +47,7 @@ const App: React.FC = () => {
           ]);
           setTotalResults(response.data.total || 0);
         }
-      } catch (error) {
-        console.error("Error fetching data:", error);
+      } catch {
         toast.error("Failed to load images! Try again!");
       } finally {
         setLoading(false);
