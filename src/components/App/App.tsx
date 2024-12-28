@@ -33,9 +33,8 @@ const App: React.FC = () => {
     async function fetchData() {
       try {
         setLoading(true);
-        const url = query
-          ? `https://api.unsplash.com/search/photos?query=${query}&page=${page}&per_page=12&client_id=s8iCvl-a7Zb2qE0wgVuqRid5TbMOqCqrEHbjrKvkTTE`
-          : `https://api.unsplash.com/photos?client_id=s8iCvl-a7Zb2qE0wgVuqRid5TbMOqCqrEHbjrKvkTTE`;
+        if (!query) return;
+        const url = `https://api.unsplash.com/search/photos?query=${query}&page=${page}&per_page=12&client_id=s8iCvl-a7Zb2qE0wgVuqRid5TbMOqCqrEHbjrKvkTTE`;
 
         const response = await axios.get(url);
 
