@@ -2,13 +2,13 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
-import SearchBar from "../SearchBar/SearchBar";
-import ImageGallery from "../ImageGallery/ImageGallery";
-import Loading from "../Loading/Loading";
-import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
-import ImageModal from "../ImageModal/ImageModal";
-import toast, { Toaster } from "react-hot-toast";
-import { Image } from "./App.types";
+import SearchBar from "../SearchBar/SearchBar.js";
+import ImageGallery from "../ImageGallery/ImageGallery.js";
+import Loading from "../Loading/Loading.js";
+import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn.js";
+import ImageModal from "../ImageModal/ImageModal.js";
+import { toast, Toaster } from "react-hot-toast";
+import { Image } from "./App.types.js";
 
 const App: React.FC = () => {
   const [images, setImages] = useState<Image[]>([]);

@@ -1,7 +1,7 @@
 import React from "react";
-import ImageCard from "../ImageCard/ImageCard";
+import ImageCard from "../ImageCard/ImageCard.js";
 import s from "./ImageGallery.module.css";
-import { Image } from "../../components/App/App.types";
+import { Image } from "../../components/App/App.types.js";
 
 interface ImageGalleryProps {
   images: Image[];
